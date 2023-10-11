@@ -5,6 +5,7 @@ import Header from '../Header'
 import CollectionSection from '../fragments/Collection'
 import ShopSection from '../fragments/ShopSection'
 import FeatureSection from '../fragments/FeatureSection'
+import BlogSection from '../fragments/BlogSection'
 
 function Home() {
   return (
@@ -24,4 +25,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
