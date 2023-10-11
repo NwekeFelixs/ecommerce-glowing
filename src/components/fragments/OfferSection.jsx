@@ -1,7 +1,31 @@
-import React from 'react';
-import '../css/style.css'
+import React, { useEffect } from 'react';
+import '../css/style.css';
 
 const OfferSection = () => {
+  // Scroll reveal function
+  const scrollReveal = () => {
+    const elements = document.querySelectorAll('.offer-banner, .offer-content');
+
+    elements.forEach((element) => {
+      if (element.getBoundingClientRect().top < window.innerHeight / 2) {
+        element.classList.add('active');
+      }
+    });
+  };
+
+  useEffect(() => {
+    // Trigger the scroll reveal function when the component mounts
+    scrollReveal();
+
+    // Add a scroll event listener to call the scrollReveal function on scroll
+    window.addEventListener('scroll', scrollReveal);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', scrollReveal);
+    };
+  }, []);
+
   return (
     <section className="section offer" id="offer" aria-label="offer" data-section>
       <div className="container">

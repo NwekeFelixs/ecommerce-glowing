@@ -1,62 +1,85 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../css/style.css';
-import { AiOutlineArrowRight, AiOutlineShoppingCart, AiOutlineStar, AiOutlineRepeat } from 'react-icons/ai';
+import { AiOutlineArrowRight, AiOutlineShoppingCart, AiOutlineStar } from 'react-icons/ai';
 
 const products = [
-    {
-      id: 1,
-      title: 'Facial Cleanser',
-      price: 29.00,
-      discountedPrice: 39.00,
-      imageUrl: require('../img/product-01.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-    {
-      id: 2,
-      title: 'Bio-shroom Rejuvenating Serum',
-      price: 29.00,
-      imageUrl: require('../img/product-02.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-    {
-      id: 3,
-      title: 'Coffee Bean Caffeine Eye Cream',
-      price: 29.00,
-      imageUrl: require('../img/product-03.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-    {
-      id: 4,
-      title: 'Facial Cleanser',
-      price: 29.00,
-      imageUrl: require('../img/product-04.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-    {
-      id: 5,
-      title: 'Coffee Bean Caffeine Eye Cream',
-      price: 29.00,
-      discountedPrice: 39.00,
-      imageUrl: require('../img/product-05.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-    {
-      id: 6,
-      title: 'Facial Cleanser',
-      price: 29.00,
-      imageUrl: require('../img/product-06.jpg').default,
-      rating: 5,
-      reviews: 5170,
-    },
-  ];
-  
+  {
+    id: 1,
+    title: 'Facial Cleanser',
+    price: 29.00,
+    discountedPrice: 39.00,
+    imageUrl: require('../img/product-01.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+  {
+    id: 2,
+    title: 'Bio-shroom Rejuvenating Serum',
+    price: 29.00,
+    imageUrl: require('../img/product-02.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+  {
+    id: 3,
+    title: 'Coffee Bean Caffeine Eye Cream',
+    price: 29.00,
+    imageUrl: require('../img/product-03.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+  {
+    id: 4,
+    title: 'Facial Cleanser',
+    price: 29.00,
+    imageUrl: require('../img/product-04.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+  {
+    id: 5,
+    title: 'Coffee Bean Caffeine Eye Cream',
+    price: 29.00,
+    discountedPrice: 39.00,
+    imageUrl: require('../img/product-05.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+  {
+    id: 6,
+    title: 'Facial Cleanser',
+    price: 29.00,
+    imageUrl: require('../img/product-06.jpg').default,
+    rating: 5,
+    reviews: 5170,
+  },
+];
 
 const ShopSection = () => {
+  // Scroll reveal function
+  const scrollReveal = () => {
+    const elements = document.querySelectorAll('.scrollbar-item');
+
+    elements.forEach((element) => {
+      if (element.getBoundingClientRect().top < window.innerHeight / 2) {
+        element.classList.add('active');
+      }
+    });
+  };
+
+  useEffect(() => {
+    // Trigger the scroll reveal function when the component mounts
+    scrollReveal();
+
+    // Add a scroll event listener to call the scrollReveal function on scroll
+    window.addEventListener('scroll', scrollReveal);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', scrollReveal);
+    };
+  }, []);
+
   return (
     <section className="section shop" id="shop" aria-label="shop" data-section>
       <div className="container">
@@ -68,7 +91,7 @@ const ShopSection = () => {
           </a>
         </div>
         <ul className="has-scrollbar">
-          {products.map(product => (
+          {products.map((product) => (
             <li className="scrollbar-item" key={product.id}>
               <div className="shop-card">
                 <div className="card-banner img-holder" style={{ '--width': 540, '--height': 720 }}>
@@ -83,9 +106,7 @@ const ShopSection = () => {
                     <button className="action-btn" aria-label="add to wishlist">
                       <AiOutlineStar />
                     </button>
-                    <button className="action-btn" aria-label="compare">
-                      <AiOutlineRepeat />
-                    </button>
+                    <button className="action-btn" aria-label="compare"></button>
                   </div>
                 </div>
                 <div className="card-content">

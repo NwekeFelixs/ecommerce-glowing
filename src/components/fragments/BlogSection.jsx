@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import '../css/style.css'
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const BlogSection = () => {
+  const scrollReveal = () => {
+    const blogSection = document.getElementById('blog');
+
+    if (blogSection && blogSection.getBoundingClientRect().top < window.innerHeight / 2) {
+      blogSection.classList.add('active');
+    }
+  };
+
+  useEffect(() => {
+    scrollReveal();
+    window.addEventListener('scroll', scrollReveal);
+    return () => {
+      window.removeEventListener('scroll', scrollReveal);
+    };
+  }, []);
+
   return (
     <section className="section blog" id="blog" aria-label="blog" data-section>
       <div className="container">
@@ -28,7 +46,7 @@ const BlogSection = () => {
               </h3>
               <a href="#" className="btn-link">
                 <span className="span">Our Store</span>
-                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                <AiOutlineArrowRight className="arrow-icon" />
               </a>
             </div>
           </li>
@@ -54,7 +72,7 @@ const BlogSection = () => {
               </h3>
               <a href="#" className="btn-link">
                 <span className="span">Our Store</span>
-                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                <AiOutlineArrowRight className="arrow-icon" />
               </a>
             </div>
           </li>
@@ -80,7 +98,7 @@ const BlogSection = () => {
               </h3>
               <a href="#" className="btn-link">
                 <span className="span">Our Store</span>
-                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                <AiOutlineArrowRight className="arrow-icon" />
               </a>
             </div>
           </li>
@@ -89,5 +107,14 @@ const BlogSection = () => {
     </section>
   );
 };
+
+
+
+
+
+
+
+
+
 
 export default BlogSection;

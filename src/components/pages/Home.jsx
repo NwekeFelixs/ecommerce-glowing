@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/style.css'
 import Footer from '../Footer'
 import HeroSection from '../fragments/HeroSection'
 import Header from '../Header'
