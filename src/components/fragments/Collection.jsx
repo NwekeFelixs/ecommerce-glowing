@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react';
 import '../css/style.css';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import collection1 from '../img/collection-1.jpg'
+import collection2 from '../img/collection-2.jpg'
+import collection3 from '../img/collection-3.jpg'
 
 const collections = [
   {
     title: 'Summer Collection',
     price: 'Starting at $17.99',
-    image: '../img/collection-1.jpg',
+    image: collection1,
   },
   {
     title: 'What’s New?',
     price: 'Get the glow',
-    image: '../img/collection-2.jpg',
+    image: collection2,
   },
   {
     title: 'Buy 1 Get 1',
     price: 'Starting at $7.99',
-    image: '../img/collection-3.jpg',
+    image: collection3,
   },
   // Add more collection objects as needed
 ];

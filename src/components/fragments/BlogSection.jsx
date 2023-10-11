@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import '../css/style.css'
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import blog1 from '../img/blog-1.jpg';
+import blog2 from '../img/blog-2.jpg';
+import blog3 from '../img/blog-3.jpg';
+
 
 const BlogSection = () => {
   const scrollReveal = () => {
@@ -31,7 +35,7 @@ const BlogSection = () => {
                 style={{ '--width': 700, '--height': 450 }}
               >
                 <img
-                  src={require('../img/blog-1.jpg').default}
+                  src={blog1}
                   width="700"
                   height="450"
                   loading="lazy"
@@ -57,7 +61,7 @@ const BlogSection = () => {
                 style={{ '--width': 700, '--height': 450 }}
               >
                 <img
-                  src={require('../img/blog-2.jpg').default}
+                  src={blog2}
                   width="700"
                   height="450"
                   loading="lazy"
@@ -83,7 +87,7 @@ const BlogSection = () => {
                 style={{ '--width': 700, '--height': 450 }}
               >
                 <img
-                  src={require('../img/blog-3.jpg').default}
+                  src={blog3}
                   width="700"
                   height="450"
                   loading="lazy"

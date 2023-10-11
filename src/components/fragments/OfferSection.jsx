@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import '../css/style.css';
+import offerImg1 from '../img/offer-banner-1.jpg'
+import offerImg2 from '../img/offer-banner-2.jpg'
 
 const OfferSection = () => {
   // Scroll reveal function
@@ -31,7 +33,7 @@ const OfferSection = () => {
       <div className="container">
         <figure className="offer-banner">
           <img
-            src={require('../img/offer-banner-1.jpg').default}
+            src={offerImg1}
             width="305"
             height="408"
             loading="lazy"
@@ -39,7 +41,7 @@ const OfferSection = () => {
             className="w-100"
           />
           <img
-            src={require('../img/offer-banner-2.jpg').default}
+            src={offerImg2}
             width="450"
             height="625"
             loading="lazy"

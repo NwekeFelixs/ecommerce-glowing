@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import '../css/style.css';
 import { AiOutlineArrowRight, AiOutlineShoppingCart, AiOutlineStar } from 'react-icons/ai';
+import product1 from '../img/product-01.jpg'
+import product2 from '../img/product-02.jpg'
+import product3 from '../img/product-03.jpg'
+import product4 from '../img/product-04.jpg'
+import product5 from '../img/product-05.jpg'
+import product6 from '../img/product-06.jpg'
 
 const products = [
   {
@@ -8,7 +14,7 @@ const products = [
     title: 'Facial Cleanser',
     price: 29.00,
     discountedPrice: 39.00,
-    imageUrl: require('../img/product-01.jpg').default,
+    imageUrl: product1,
     rating: 5,
     reviews: 5170,
   },
@@ -16,7 +22,7 @@ const products = [
     id: 2,
     title: 'Bio-shroom Rejuvenating Serum',
     price: 29.00,
-    imageUrl: require('../img/product-02.jpg').default,
+    imageUrl: product2,
     rating: 5,
     reviews: 5170,
   },
@@ -24,7 +30,7 @@ const products = [
     id: 3,
     title: 'Coffee Bean Caffeine Eye Cream',
     price: 29.00,
-    imageUrl: require('../img/product-03.jpg').default,
+    imageUrl: product3,
     rating: 5,
     reviews: 5170,
   },
@@ -32,7 +38,7 @@ const products = [
     id: 4,
     title: 'Facial Cleanser',
     price: 29.00,
-    imageUrl: require('../img/product-04.jpg').default,
+    imageUrl: product4,
     rating: 5,
     reviews: 5170,
   },
@@ -41,7 +47,7 @@ const products = [
     title: 'Coffee Bean Caffeine Eye Cream',
     price: 29.00,
     discountedPrice: 39.00,
-    imageUrl: require('../img/product-05.jpg').default,
+    imageUrl: product5,
     rating: 5,
     reviews: 5170,
   },
@@ -49,7 +55,7 @@ const products = [
     id: 6,
     title: 'Facial Cleanser',
     price: 29.00,
-    imageUrl: require('../img/product-06.jpg').default,
+    imageUrl: product6,
     rating: 5,
     reviews: 5170,
   },
