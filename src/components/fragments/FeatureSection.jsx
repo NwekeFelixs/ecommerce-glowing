@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import '../css/style.css';
+import FeatureImg1 from '../img/feature-1.jpg'
+import FeatureImg2 from '../img/feature-2.jpg'
+import FeatureImg3 from '../img/feature-3.jpg'
 
 const FeatureSection = () => {
   const featureItems = [
@@ -7,19 +10,19 @@ const FeatureSection = () => {
       id: 1,
       title: 'Guaranteed PURE',
       text: 'All Grace formulations adhere to strict purity standards and will never contain harsh or toxic ingredients',
-      imageUrl: require('../img/feature-1.jpg').default,
+      imageUrl: FeatureImg1,
     },
     {
       id: 2,
       title: 'Completely Cruelty-Free',
       text: 'All Grace formulations adhere to strict purity standards and will never contain harsh or toxic ingredients',
-      imageUrl: require('../img/feature-2.jpg').default,
+      imageUrl: FeatureImg2,
     },
     {
       id: 3,
       title: 'Ingredient Sourcing',
       text: 'All Grace formulations adhere to strict purity standards and will never contain harsh or toxic ingredients',
-      imageUrl: require('../img/feature-3.jpg').default,
+      imageUrl: FeatureImg3,
     },
   ];
 

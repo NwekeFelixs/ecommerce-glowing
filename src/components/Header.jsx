@@ -7,10 +7,10 @@ import {
   AiOutlineShoppingCart,
   AiOutlineClose
 } from 'react-icons/ai';
+import logo from '../components/img/logo.png';
+import ScrollReveal from 'scrollreveal';
 
-import logo from '../components/img/logo.png'
-
-const HeaderComponent = () => {
+const Header = () => {
   useEffect(() => {
     const addEventOnElem = function (elem, type, callback) {
       if (elem.length > 1) {
@@ -23,6 +23,12 @@ const HeaderComponent = () => {
     };
 
     // Add your logic for scrollReveal here
+    ScrollReveal().reveal('.animate', {
+      origin: 'top',
+      distance: '20px',
+      duration: 1000,
+      delay: 200,
+    });
 
     const navTogglers = document.querySelectorAll("[data-nav-toggler]");
     const navbar = document.querySelector("[data-navbar]");
@@ -30,55 +36,34 @@ const HeaderComponent = () => {
     const overlay = document.querySelector("[data-overlay]");
 
     const toggleNavbar = function () {
-      navbar.classList.toggle("active");
-      overlay.classList.toggle("active");
+      if (navbar) {
+        navbar.classList.toggle("active");
+      }
+      if (overlay) {
+        overlay.classList.toggle("active");
+      }
     };
 
     addEventOnElem(navTogglers, "click", toggleNavbar);
 
     const closeNavbar = function () {
-      navbar.classList.remove("active");
-      overlay.classList.remove("active");
+      if (navbar) {
+        navbar.classList.remove("active");
+      }
+      if (overlay) {
+        overlay.classList.remove("active");
+      }
     };
 
     addEventOnElem(navbarLinks, "click", closeNavbar);
-
-    const header = document.querySelector("[data-header]");
-    const backTopBtn = document.querySelector("[data-back-top-btn]");
-
-    const headerActive = function () {
-      if (window.scrollY > 150) {
-        header.classList.add("active");
-        backTopBtn.classList.add("active");
-      } else {
-        header.classList.remove("active");
-        backTopBtn.classList.remove("active");
-      }
-    };
-
-    addEventOnElem(window, "scroll", headerActive);
-
-    let lastScrolledPos = 0;
-
-    const headerSticky = function () {
-      if (lastScrolledPos >= window.scrollY) {
-        header.classList.remove("header-hide");
-      } else {
-        header.classList.add("header-hide");
-      }
-
-      lastScrolledPos = window.scrollY;
-    };
-
-    addEventOnElem(window, "scroll", headerSticky);
   }, []);
 
   return (
     <div>
-        <header className="header">
+      <header className="header">
         <div className="alert">
           <div className="container">
-            <p className="alert-text">Free Shipping On All U.S. Orders $50+</p>
+            <p className="alert-text animate">Free Shipping On All U.S. Orders $50+</p>
           </div>
         </div>
         <div className="header-top" data-header>
@@ -93,14 +78,14 @@ const HeaderComponent = () => {
                 type="search"
                 name="search"
                 placeholder="Search product"
-                className="search-field"
+                className="search-field animate"
               />
               <button className="search-submit" aria-label="search">
                 <AiOutlineSearch />
               </button>
             </div>
-            <a href="#" className="logo">
-              <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing" />
+            <a href="#" className="logo animate">
+              <img src={logo} width="179" height="26" alt="Glowing" />
             </a>
             <div className="header-actions">
               <button className="header-action-btn" aria-label="user">
@@ -108,38 +93,38 @@ const HeaderComponent = () => {
               </button>
               <button className="header-action-btn" aria-label="favourite item">
                 <AiOutlineStar />
-                <span className="btn-badge">0</span>
+                <span className="btn-badge animate">0</span>
               </button>
               <button className="header-action-btn" aria-label="cart item">
                 <data className="btn-text" value="0">$0.00</data>
                 <AiOutlineShoppingCart />
-                <span className="btn-badge">0</span>
+                <span className="btn-badge animate">0</span>
               </button>
             </div>
             <nav className="navbar">
               <ul className="navbar-list">
                 <li>
-                  <a href="#home" className="navbar-link has-after">
+                  <a href="#home" className="navbar-link has-after animate">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#collection" className="navbar-link has-after">
+                  <a href="#collection" className="navbar-link has-after animate">
                     Collection
                   </a>
                 </li>
                 <li>
-                  <a href="#shop" className="navbar-link has-after">
+                  <a href="#shop" className="navbar-link has-after animate">
                     Shop
                   </a>
                 </li>
                 <li>
-                  <a href="#offer" className="navbar-link has-after">
+                  <a href="#offer" className="navbar-link has-after animate">
                     Offer
                   </a>
                 </li>
                 <li>
-                  <a href="#blog" className="navbar-link has-after">
+                  <a href="#blog" className="navbar-link has-after animate">
                     Blog
                   </a>
                 </li>
@@ -147,40 +132,49 @@ const HeaderComponent = () => {
             </nav>
           </div>
         </div>
-        </header>
+      </header>
       <div className="sidebar">
         <div className="mobile-navbar" data-navbar>
           <div className="wrapper">
-            <a href="#" className="logo">
+            <a href="#" className="logo animate">
               <img src={logo} width="179" height="26" alt="Glowing" />
             </a>
             <button className="nav-close-btn" aria-label="close menu" data-nav-toggler>
-              <AiOutlineClose/>
+              <AiOutlineClose />
             </button>
           </div>
           <ul className="navbar-list">
             <li>
-              <a href="#home" className="navbar-link" data-nav-link>Home</a>
+              <a href="#home" className="navbar-link animate" data-nav-link>
+                Home
+              </a>
             </li>
             <li>
-              <a href="#collection" className="navbar-link" data-nav-link>Collection</a>
+              <a href="#collection" className="navbar-link animate" data-nav-link>
+                Collection
+              </a>
             </li>
             <li>
-              <a href="#shop" className="navbar-link" data-nav-link>Shop</a>
+              <a href="#shop" className="navbar-link animate" data-nav-link>
+                Shop
+              </a>
             </li>
             <li>
-              <a href="#offer" className="navbar-link" data-nav-link>Offer</a>
+              <a href="#offer" className="navbar-link animate" data-nav-link>
+                Offer
+              </a>
             </li>
             <li>
-              <a href="#blog" className="navbar-link" data-nav-link>Blog</a>
+              <a href="#blog" className="navbar-link animate" data-nav-link>
+                Blog
+              </a>
             </li>
           </ul>
         </div>
-        <div clas
-        sName="overlay" data-nav-toggler data-overlay></div>
+        <div className="overlay" data-nav-toggler data-overlay></div>
       </div>
     </div>
   );
 };
 
-export default HeaderComponent;
+export default Header;
